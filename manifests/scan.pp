@@ -24,10 +24,6 @@ define clamav::scan (
   $scanlog = "/var/log/clamav/scan_${title}",
   $weekday = 'UNSET',
 ) {
-  file { [ '/etc/clamav', '/etc/clamav/scans' ]:
-    ensure => directory,
-    owner  => 'clam',
-  }
   $scancmd = "/etc/clamav/scans/${title}"
   file { $scancmd:
     ensure  => present,
