@@ -10,7 +10,7 @@ Setup a clamav scan that scans everything except the /sys and /dev, and does
 not run on a schedule.
 
      clamav::scan { 'all-but-sys-and-dev':
-       exclude_dir => '(?i)/^(sys|dev)',
+       exclude_dir => '(?i)/^\/(sys|dev)/',
        scan        => '/',
        enable      => false,
      }
